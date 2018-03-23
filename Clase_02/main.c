@@ -23,6 +23,8 @@ int main()
     int max;
     int min;
     int flag=0;
+    int flagPar=0;
+    int maxPar;
 
 
     while (respuesta!='n')
@@ -38,7 +40,12 @@ int main()
 
         if(numero%2==0)   //saca el resto para saber si es PAR
         {
+            if(cantidadPar==0 || numero>maxPar) //saca el max numero par
+            {
+                maxPar=numero;
+            }
             cantidadPar++;
+
         }
         else
         {
@@ -55,7 +62,18 @@ int main()
         }
 
 
-        if(flag==0)
+        if(flag==0 || numero>max)
+        {
+            max=numero;
+        }
+        if(flag==0 || numero<min)
+        {
+            min=numero;
+            flag=1;
+        }
+
+
+        /*if(flag==0)
         {
             max= numero;
             min= numero;
@@ -71,7 +89,7 @@ int main()
             {
                 max=numero;
             }
-        }
+        }*/
 
 
 
@@ -85,15 +103,15 @@ int main()
     contNumeros= contNegativos + contPositivos;
 
     porcentajePositivos=  (float)(contPositivos*100)/contNumeros;      //(contPositivos*100)/contNumeros;
-    porcentajeNegativos=  100 - porcentajePositivos;         //(contNegativos*100)/contNumeros//
+    porcentajeNegativos=  100 - porcentajePositivos;         //(contNegativos*100)/contNumeros
 
-    printf("\nla cantidad de pares es: %d",cantidadPar);
+    printf("\nLa cantidad de pares es: %d",cantidadPar);
     printf("\nLa cantidad de Impares es: %d",cantidadImpar);
     printf("\nLa cantidad de Porcentaje de Positivos es: %% %.2f",porcentajePositivos);
     printf("\nLa cantidad de Porcentaje de Negativos es: %% %.2f",porcentajeNegativos);
     printf("\nEl maximo es: %d",max);
     printf("\nEl minimo es: %d",min);
-
+    printf("\nEl Maximo numero par es: %d",maxPar);
 
     return 0;
 }
