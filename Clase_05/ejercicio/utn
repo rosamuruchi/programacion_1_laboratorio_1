@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define cantidad 5
+
+
+void cambiarEntero (int numero);
+
+void cambiarVector (int listadoNumeros[cantidad]);
+
+void cargarValorConMenosUno(int listado[cantidad]);
+
+int main()
+{
+    int edad=22;
+    int edades[cantidad];
+
+    cambiarEntero(edad);
+
+    printf("Edad: %d\n",edad);
+
+    cambiarVector(edades);
+    printf("Edad: %d",edades[cantidad]);
+
+
+    return 0;
+}
+
+
+void cambiarEntero (int numero)
+{
+    numero=666;
+
+}
+
+void cambiarVector (int listadoNumeros[cantidad])
+{
+    listadoNumeros[0]=666;
+
+    int tamanioArray= sizeof(listadoNumeros);
+    printf("tamanio: %d\n",tamanioArray);
+}
+
+void cargarValorConMenosUno(int listado[cantidad])
+{
+    int i;
+    int tamanio;
+
+    for(i=0; i<tamanio ;i++)
+    {
+       listado [i]= -1;
+    }
+
+}
